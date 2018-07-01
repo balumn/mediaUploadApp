@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-list>
+    <div *ngFor="let item of items;">
+      <ion-item>
+        <button ion-item (click)="setMeLive(item)">{{item.name}}</button>
+      </ion-item>
+    </div>
+  </ion-list> -->
+
+  <ion-list>
+    <table>
+      <tr *ngFor="let item of items">
+        <td><button ion-item (click)="setMeLive(item)">{{item.name}}</button></td>
+
+      </tr>
+    </table>
+  </ion-list>
+
+
+
+</ion-content>
