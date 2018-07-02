@@ -37,12 +37,12 @@ export class AddFPage {
 
         //data insert section
         db.executeSql('CREATE TABLE IF NOT EXISTS farmers(fid INTEGER PRIMARY KEY AUTOINCREMENT,fname)', {})
-          .then(() => alert('Executed SQL'))
+          .then()
           .catch(e => console.log(e));
 
         //data insert section
         db.executeSql('INSERT INTO farmers(fname) VALUES(?)', [this.farmerName])
-          .then(() => alert('Inserted into table'))
+          .then()
           .catch(e => console.log(e));
 
 
@@ -50,8 +50,7 @@ export class AddFPage {
 
         db.executeSql('select * from farmers', {}).then((data) => {
 
-          alert(JSON.stringify(data));
-          alert('data is read from DB');
+          JSON.stringify(data)
 
           //alert(data.rows.length);
           //alert(data.rows.item(5).name);
@@ -68,15 +67,13 @@ export class AddFPage {
         });
       })
       .catch(e => alert(JSON.stringify(e)));
-    alert(this.farmerName);
 
   }
   del(){
     this.sqlite.deleteDatabase({
       name: 'data.db',
       location: 'default'
-    }).then(() => 
-      alert('Executed SQL'))
+    }).then()
 
     }
 }
